@@ -7,7 +7,8 @@
 get_wiki(title, clean = TRUE)
 }
 \arguments{
-\item{title}{The title to be searched}
+\item{title}{The title or (titles) of the Wikipedia page to be searched. If you would like to query multiple articles,
+put the titles in a character vector}
 
 \item{clean}{Should getwiki remove html tags from the returned text?}
 }
@@ -15,5 +16,6 @@ get_wiki(title, clean = TRUE)
 Get the text of a wikipedia article by submitted a title as a string.
 }
 \examples{
-get_wiki()
+get_wiki("United States")
+get_wiki(c("United States", "France"))
 }

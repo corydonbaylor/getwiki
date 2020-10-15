@@ -1,12 +1,12 @@
 #' Clean Your Wiki
 #'
 #' This function accepts a string and removes new line indentations and html tags with regex
-#' @param htmlString The string to be cleaned
+#' @param string The string to be cleaned
 #' @export
 #' @examples
-#' clean_wiki()
+#' clean_wiki("<p>some text</p>")
 
-clean_wiki <- function(htmlString) {
-  htmlString = gsub("\n", "", htmlString)
-  return(gsub("<.*?>", "", htmlString))
+clean_wiki <- function(string) {
+  string = gsub("\n", "", string)
+  return(gsub("<.*?>", "", string))
 }

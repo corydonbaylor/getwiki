@@ -4,14 +4,14 @@
 \alias{clean_wiki}
 \title{Clean Your Wiki}
 \usage{
-clean_wiki(htmlString)
+clean_wiki(string)
 }
 \arguments{
-\item{htmlString}{The string to be cleaned}
+\item{string}{The string to be cleaned}
 }
 \description{
 This function accepts a string and removes new line indentations and html tags with regex
 }
 \examples{
-clean_wiki()
+clean_wiki("<p>some text</p>")
 }
