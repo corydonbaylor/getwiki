@@ -1,13 +1,17 @@
 #' Get the Text of a Wikipedia Article
 #'
-#' Get the text of a wikipedia article by submitted a title as a string.
+#' Get the text of a wikipedia article by searching a title. For example, entering the search term "France" will return
+#' the text of the wikipedia page for France.
 #' @param title The title or (titles) of the Wikipedia page to be searched. If you would like to query multiple articles,
-#' put the titles in a character vector
+#' put the titles in a character vector. The maximum number of titles that can be queried at one time is 50.
 #' @param clean Should getwiki remove html tags from the returned text?
-#' @export
+#' @return A single title will return the matched wikipedia article in a string. A vector of titles will return
+#' a dataframe with one column equal to the searched titles and one column equal to the matched article content
 #' @examples
 #' get_wiki("United States")
 #' get_wiki(c("United States", "France"))
+#' @export
+
 
 get_wiki <- function(title, clean = TRUE){
 
@@ -27,7 +31,8 @@ get_wiki <- function(title, clean = TRUE){
       stop("Getwiki could not find the requested page title. Make sure you are entering a valid title.")
     }
 
-    #the page is usually called the article id, we will rename it to content
+    #the page is usually called  by its article id, we will rename it to content, so the name of the variable
+    # doesnt vary
     names(result$query$pages) = "content"
 
     # if the user selects true for clean then we will use regex to clean the text

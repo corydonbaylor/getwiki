@@ -8,12 +8,17 @@ get_wiki(title, clean = TRUE)
 }
 \arguments{
 \item{title}{The title or (titles) of the Wikipedia page to be searched. If you would like to query multiple articles,
-put the titles in a character vector}
+put the titles in a character vector. The maximum number of titles that can be queried at one time is 50.}
 
 \item{clean}{Should getwiki remove html tags from the returned text?}
 }
+\value{
+A single title will return the matched wikipedia article in a string. A vector of titles will return
+a dataframe with one column equal to the searched titles and one column equal to the matched article content
+}
 \description{
-Get the text of a wikipedia article by submitted a title as a string.
+Get the text of a wikipedia article by searching a title. For example, entering the search term "France" will return
+the text of the wikipedia page for France.
 }
 \examples{
 get_wiki("United States")

@@ -11,8 +11,13 @@ search_wiki(search_term, clean = TRUE)
 
 \item{clean}{Should getwiki remove html tags from the returned text?}
 }
+\value{
+search_term will return a dataframe of the top twenty search results. The "title" column will be the title
+of the articles and the "content" column will be the first paragraph from those articles.
+}
 \description{
-Get the text of a wikipedia article by submitted a title as a string.
+Search for the top twenty wikipedia pages that match a given query. This function will return a dataframe with the
+names of the matched articles and the first paragraph of content.
 }
 \examples{
 search_wiki("Belgrade")
