@@ -14,6 +14,7 @@ search_wiki = function(search_term, clean = TRUE){
 
   # cleaning title
   search_term = gsub("\\s", "_", search_term)
+  search_term = gsub("–", " ", search_term)
 
   # querying wikipedia
   result = jsonlite::fromJSON(paste0("https://en.wikipedia.org/w/api.php?action=query&generator=search&gsrlimit=20&prop=extracts&exintro&explaintext&exlimit=max&format=json&gsrsearch=",

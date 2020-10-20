@@ -16,14 +16,19 @@
 get_wiki <- function(title, clean = TRUE){
 
 
+# Validating Titles for API -----------------------------------------------
+
+  # replace spaces with underscore
+  title = gsub("\\s", "_", title)
+  # replaces - which is invalid
+  title = gsub("–", " ", title)
+
+
 # Single title to search --------------------------------------------------
 
 
   if(length(title)==1){
-    # replace spaces with underscore
-    title = gsub("\\s", "_", title)
-    # replaces - which is invalid
-    title = gsub("–", " ", title)
+
     # using jsonlite we pull back the wikipedia article
     result = jsonlite::fromJSON(paste0("https://en.wikipedia.org/w/api.php?action=query&titles=", title, "&prop=extracts&redirects=&format=json"))
 
