@@ -27,10 +27,6 @@ devtools::install_github("corydonbaylor/getwiki")
 library(getwiki)
 ```
 
-# Importing Text Data
-
-`getwiki` has three main functions to import text data: `get_wiki`, `search_wiki` and `random_wiki`. 
-
 ## Use `get_wiki` to Import the Text of a Wikipedia Article
 
 The first function, `get_wiki`, will return the matched Wikipedia article based on titles. So if you were to search for France then the function would return the Wikipedia article for France as a string. 
@@ -85,5 +81,15 @@ If you would just like to pull in a random article, you can do that as well with
 ```{r random_wiki, eval=FALSE}
 # returns a random wikipedia article
 random_wiki()
+
+```
+
+## Find Trends for a Wikipedia Article with `trend_wiki`
+
+If you want to find how often a particular page has been viewed, you can use `trend_wiki`. It will return a data.frame with the page views for the last sixty days. 
+
+```{r trend_wiki, eval=FALSE}
+# returns a random wikipedia article
+trend_wiki("France")
 
 ```

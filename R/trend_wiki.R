@@ -32,6 +32,6 @@ trend_wiki = function(title){
   return(data.frame(
     title = trend$query$pages$content$title,
     date = dates,
-    value = as.numeric(vec)
+    views = as.numeric(vec)
     ))
 }
