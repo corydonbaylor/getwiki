@@ -11,6 +11,7 @@ Starting with `getwiki` is easy. First install it from github using devtools and
 devtools::install_github("corydonbaylor/getwiki")
 # load into R
 library(getwiki)
+
 ```
 
 ## Use get_wiki to Import the Text of a Wikipedia Article
@@ -80,6 +81,7 @@ random_wiki()
 If you want to find how often a particular page has been viewed, you can use `trend_wiki`. It will return a data.frame with the page views for the last sixty days. 
 
 ```{r trend_wiki, eval=FALSE}
+
 # returns a random wikipedia article
 trend_wiki("France")
 
