@@ -13,11 +13,7 @@ devtools::install_github("corydonbaylor/getwiki")
 library(getwiki)
 ```
 
-## Importing Text Data
-
-`getwiki` has three main functions to import text data: `get_wiki`, `search_wiki` and `random_wiki`. 
-
-### Use get_wiki to Import the Text of a Wikipedia Article
+## Use get_wiki to Import the Text of a Wikipedia Article
 
 The first function, `get_wiki`, will return the matched Wikipedia article based on titles. So if you were to search for France then the function would return the Wikipedia article for France as a string. 
 
@@ -46,7 +42,7 @@ get_wiki("France", clean = FALSE)
 
 ```
 
-### Use search_wiki to Return the Top Twenty Results of a Search Term
+## Use search_wiki to Return the Top Twenty Results of a Search Term
 
 Sometimes you may not be exactly sure what article you are looking for. `search_wiki` will return the top twenty matching articles based on a search term. So for example if you were to search for United States, you will retun a data.frame with a column for the returned titles and a column with the content of those articles. 
 
@@ -69,7 +65,7 @@ big_us = get_wiki(us$titles)
 
 ```
 
-### Return a Random Article with random_wiki
+## Return a Random Article with random_wiki
 
 If you would just like to pull in a random article, you can do that as well with `random_wiki`. This function works exactly the same as `get_wiki` except you cannot specify the article, and you can only return one article at a time.  
 
@@ -77,5 +73,14 @@ If you would just like to pull in a random article, you can do that as well with
 
 # returns a random wikipedia article
 random_wiki()
+
+```
+## Find Trends for a Wikipedia Article with trend_wiki
+
+If you want to find how often a particular page has been viewed, you can use `trend_wiki`. It will return a data.frame with the page views for the last sixty days. 
+
+```{r trend_wiki, eval=FALSE}
+# returns a random wikipedia article
+trend_wiki("France")
 
 ```
