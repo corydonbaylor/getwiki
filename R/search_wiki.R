@@ -12,6 +12,11 @@
 
 search_wiki = function(search_term, clean = TRUE){
 
+  # search term val check
+  if(length(title) != 1){
+    stop("Please enter a single value for the search term")
+  }
+
   # cleaning title
   search_term = gsub("\\s", "_", search_term)
   search_term = gsub("–", " ", search_term)
